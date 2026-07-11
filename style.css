@@ -1,65 +1,740 @@
-* {
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap");
+
+/* ==========================================================
+   THEME
+========================================================== */
+
+:root{
+
+    --bg:#020617;
+
+    --surface:rgba(255,255,255,.08);
+    --surface-light:rgba(255,255,255,.18);
+
+    --border:rgba(255,255,255,.16);
+
+    --text:#ffffff;
+    --text-light:#dbeafe;
+
+    --cyan:#22d3ee;
+    --blue:#3b82f6;
+    --purple:#8b5cf6;
+
+    --radius:34px;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+    --glass:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.18),
+            rgba(255,255,255,.05)
+        );
+
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
+/* ==========================================================
+   RESET
+========================================================== */
 
-    background: #111;
-    color: #fff;
+*,
+*::before,
+*::after{
 
-    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing:border-box;
 
-    text-align: center;
 }
 
-main {
-    max-width: 600px;
-    padding: 40px;
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-.logo {
-    width: 160px;
-    height: auto;
-    margin-bottom: 20px;
+body{
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    font-family:"Exo",sans-serif;
+
+    color:var(--text);
+
+    background:var(--bg);
+
 }
 
-h1 {
-    font-size: 48px;
-    margin: 10px 0;
+/* ==========================================================
+   ANIMATED BACKGROUND
+========================================================== */
+
+.background-grid{
+
+    position:fixed;
+
+    inset:-200px;
+
+    z-index:-3;
+
+    background-image:
+    url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC");
+
+    background-repeat:repeat;
+
+    opacity:.16;
+
+    animation:gridMove 18s linear infinite;
+
+    will-change:transform;
+
 }
 
-p {
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.5;
+@keyframes gridMove{
+
+    from{
+
+        transform:translate3d(0,0,0);
+
+    }
+
+    to{
+
+        transform:translate3d(-50px,-50px,0);
+
+    }
+
 }
 
-.links {
-    margin-top: 30px;
+/* ==========================================================
+   AMBIENT LIGHTS
+========================================================== */
+
+.ambient{
+
+    position:fixed;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.35;
+
+    pointer-events:none;
+
+    z-index:-2;
+
 }
 
-.links a {
-    display: inline-block;
+.ambient-one{
 
-    color: #fff;
-    text-decoration: none;
+    background:var(--cyan);
 
-    border: 1px solid #444;
-    border-radius: 8px;
+    left:-140px;
+    top:-140px;
 
-    padding: 10px 18px;
-    margin: 5px;
-
-    transition: 0.2s;
 }
 
-.links a:hover {
-    background: #fff;
-    color: #111;
+.ambient-two{
+
+    background:var(--purple);
+
+    right:-140px;
+    bottom:-140px;
+
+}
+
+.ambient-three{
+
+    background:var(--blue);
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+/* ==========================================================
+   MAIN LAYOUT
+========================================================== */
+
+.scene{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:70px 8%;
+
+}
+
+/* ==========================================================
+   GLASS
+========================================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================================
+   HERO CARD
+========================================================== */
+
+.hero-card{
+
+    width:min(1050px,100%);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:50px;
+
+    border-radius:var(--radius);
+
+}
+
+/* ==========================================================
+   BRAND
+========================================================== */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    flex:1;
+
+}
+
+.logo-box{
+
+    width:160px;
+    height:160px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:28px;
+
+}
+
+.logo-box img{
+
+    width:95px;
+
+    height:auto;
+
+}
+
+.content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.content h1{
+
+    font-size:clamp(48px,6vw,72px);
+
+    line-height:1;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    background:#FFF8D1;
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+.content p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:var(--text-light);
+
+}
+
+.tagline{
+
+    font-size:15px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.75);
+
+}
+
+/* ==========================================================
+   SOCIAL MEDIA
+========================================================== */
+
+.socials{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,72px);
+
+    gap:18px;
+
+    flex-shrink:0;
+
+}
+
+.socials a{
+
+    width:72px;
+    height:72px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    color:var(--text);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.socials a:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.06);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34,211,238,.30),
+            rgba(139,92,246,.30)
+        );
+
+    border-color:
+        rgba(34,211,238,.55);
+
+    box-shadow:
+        0 0 28px rgba(34,211,238,.40);
+
+}
+
+.socials a:active{
+
+    transform:scale(.96);
+
+}
+
+.socials a:focus-visible{
+
+    outline:2px solid var(--cyan);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================================================
+   ICON COLORS
+========================================================== */
+
+.socials .fa-instagram:hover{
+
+    color:#E4405F;
+
+}
+
+.socials .fa-youtube:hover{
+
+    color:#FF0000;
+
+}
+
+.socials .fa-discord:hover{
+
+    color:#5865F2;
+
+}
+
+.socials .fa-telegram:hover{
+
+    color:#229ED9;
+
+}
+
+.socials .fa-twitch:hover{
+
+    color:#9146FF;
+
+}
+
+.socials .fa-kickstarter:hover{
+
+    color:#53FC18;
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.footer{
+
+    width:max-content;
+
+    margin:
+        0 auto
+        28px;
+
+    padding:
+        14px
+        30px;
+
+    border-radius:999px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:
+        rgba(255,255,255,.78);
+
+}
+
+.footer p{
+
+    margin:0;
+
+    letter-spacing:.4px;
+
+}
+
+/* ==========================================================
+   SMALL ANIMATIONS
+========================================================== */
+
+.hero-card{
+
+    animation:
+        heroFade
+        .9s
+        ease;
+
+}
+
+.logo-box{
+
+    animation:
+        logoFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px)
+            scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+@keyframes logoFloat{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width:960px){
+
+    .scene{
+
+        padding:50px 28px;
+
+    }
+
+    .hero-card{
+
+        gap:40px;
+
+        padding:40px;
+
+    }
+
+    .brand{
+
+        gap:28px;
+
+    }
+
+    .logo-box{
+
+        width:130px;
+        height:130px;
+
+    }
+
+    .logo-box img{
+
+        width:78px;
+
+    }
+
+    .content p{
+
+        font-size:18px;
+
+    }
+
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width:760px){
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+    .scene{
+
+        padding:28px 18px;
+
+    }
+
+    .hero-card{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+        gap:38px;
+
+        padding:34px 24px;
+
+    }
+
+    .brand{
+
+        flex-direction:column;
+
+        gap:26px;
+
+    }
+
+    .content{
+
+        align-items:center;
+
+    }
+
+    .line{
+
+        margin:auto;
+
+    }
+
+    .socials{
+
+        grid-template-columns:
+            repeat(3,70px);
+
+        justify-content:center;
+
+    }
+
+    .footer{
+
+        width:calc(100% - 36px);
+
+        margin:
+            0 auto
+            18px;
+
+        padding:14px 20px;
+
+    }
+
+}
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
+@media (max-width:480px){
+
+    .hero-card{
+
+        padding:28px 18px;
+
+    }
+
+    .content h1{
+
+        letter-spacing:2px;
+
+    }
+
+    .content p{
+
+        font-size:17px;
+
+    }
+
+    .logo-box{
+
+        width:110px;
+        height:110px;
+
+        border-radius:24px;
+
+    }
+
+    .logo-box img{
+
+        width:66px;
+
+    }
+
+    .socials{
+
+        grid-template-columns:
+            repeat(2,68px);
+
+        gap:16px;
+
+    }
+
+    .socials a{
+
+        width:68px;
+        height:68px;
+
+        font-size:28px;
+
+    }
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none !important;
+
+        transition:none !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
 }
