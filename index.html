@@ -1,35 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Caffeine Game</title>
-    <meta name="description" content="Caffeine Game - Indie game development studio.">
+    <title>Caffeine | Official Media</title>
 
-    <link rel="icon" href="favicon.ico">
+    <meta name="description"
+        content="Official Caffeine gaming and media platform. Follow Caffeine on YouTube, Twitch, Discord, Instagram, Telegram, and Kick.">
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <!-- Google Fonts Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <main>
-        <img src="images/logo.png" alt="Caffeine Game logo" class="logo">
+    <!-- Animated Background -->
+    <div class="background-grid" aria-hidden="true"></div>
 
-        <h1>Caffeine Game</h1>
+    <!-- Ambient Glow -->
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="ambient ambient-three" aria-hidden="true"></div>
 
-        <p>
-            Indie game development.
-            Creating unique worlds and experiences.
-        </p>
+    <main class="scene">
 
-        <div class="links">
-            <a href="#">Games</a>
-            <a href="#">Discord</a>
-            <a href="#">YouTube</a>
-            <a href="mailto:contact@caffeinegame.com">Contact</a>
-        </div>
+        <!-- Combined Hero Card -->
+        <section class="hero-card glass">
+
+            <!-- Brand -->
+            <div class="brand">
+
+                <div class="logo-box">
+                    <img
+                        src="images/logo.png"
+                        alt="Caffeine Logo"
+                        decoding="async">
+                </div>
+
+                <div class="content">
+
+                    <h1>Caffeine</h1>
+
+                    <p>
+                        The next generation gaming &amp; media experience.
+                    </p>
+
+                    <p class="tagline">
+                        Official Media
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Social Media -->
+            <nav class="socials" aria-label="Official social media">
+
+                <a href="https://www.instagram.com/caffeine.amirali"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://kick.com/caffeinn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Kick">
+		    <i class="fa-brands fa-kickstarter aria-hidden="true""></i>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCd2Ud_Cj4rePfoud_KrFuvQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://discord.com/invite/uFSJMmXqBK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Discord">
+                    <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://t.me/caffeinegame"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Telegram">
+                    <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                </a>
+
+                <a href="https://www.twitch.tv/caffeine_game"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitch">
+                    <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+                </a>
+
+            </nav>
+
+        </section>
+
     </main>
 
+    <footer class="glass footer">
+        <p>&copy; 2026 Caffeine. All rights reserved. // v0.0.2</p>
+    </footer>
+
 </body>
+
 </html>
