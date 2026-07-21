@@ -11,17 +11,58 @@
     <meta name="description"
         content="Official Caffeine gaming and media platform. Follow Caffeine on YouTube, Twitch, Discord, Instagram, Telegram, and Kick.">
 
-    <link rel="icon" href="favicon.ico" sizes="any">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://caffeinegame.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Caffeine">
+    <meta property="og:title" content="Caffeine | Official Media">
+    <meta property="og:description" content="Official Caffeine gaming and media platform.">
+    <meta property="og:url" content="https://caffeinegame.com/">
+    <meta property="og:image" content="https://caffeinegame.com/images/og-image.png">
+    <meta property="og:image:alt" content="Caffeine official media platform">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Caffeine | Official Media">
+    <meta name="twitter:description" content="Official Caffeine gaming and media platform.">
+    <meta name="twitter:image" content="https://caffeinegame.com/images/og-image.png">
+    <meta name="twitter:image:alt" content="Caffeine official media platform">
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
 
     <!-- Google Fonts Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="/images/logo.png">
+    <link rel="preload" as="image" href="/images/logo-half.png">
+    <link rel="preload" as="image" href="/images/logo-closed.png">
+
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Caffeine",
+    "url": "https://caffeinegame.com/",
+    "image": "https://caffeinegame.com/images/logo.png",
+    "sameAs": [
+        "https://www.instagram.com/caffeine.amirali",
+        "https://kick.com/caffeinn",
+        "https://www.youtube.com/channel/UCd2Ud_Cj4rePfoud_KrFuvQ",
+        "https://discord.com/invite/uFSJMmXqBK",
+        "https://t.me/caffeinegame",
+        "https://www.twitch.tv/caffeine_game"
+    ]
+    }
+    </script>
 
 </head>
 
@@ -38,21 +79,18 @@
     <main class="scene">
 
         <!-- Combined Hero Card -->
-        <section class="hero-card glass">
+        <section class="hero-card glass" id="hero-card" aria-labelledby="page-title">
 
             <!-- Brand -->
             <div class="brand">
 
                 <div class="logo-box">
-                    <img
-                        src="images/logo.png"
-                        alt="Caffeine Logo"
-                        decoding="async">
+                    <img id="coffee-character" src="/images/logo.png" width="240" height="240"
+                        alt="Caffeine official logo" decoding="async" fetchpriority="high">
                 </div>
-
                 <div class="content">
 
-                    <h1>Caffeine</h1>
+                    <h1 id="page-title">Caffeine</h1>
 
                     <p>
                         The next generation gaming &amp; media experience.
@@ -69,46 +107,38 @@
             <!-- Social Media -->
             <nav class="socials" aria-label="Official social media">
 
-                <a href="https://www.instagram.com/caffeine.amirali"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a href="https://www.instagram.com/caffeine.amirali" target="_blank" rel="noopener noreferrer"
                     aria-label="Instagram">
                     <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    <span>Instagram</span>
                 </a>
 
-                <a href="https://kick.com/caffeinn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Kick">
-		    <i class="fa-brands fa-kickstarter aria-hidden="true""></i>
+                <a href="https://kick.com/caffeinn" target="_blank" rel="noopener noreferrer" aria-label="Kick">
+                    <i class="fa-brands fa-kickstarter" aria-hidden="true"></i>
+                    <span>Kick</span>
                 </a>
 
-                <a href="https://www.youtube.com/channel/UCd2Ud_Cj4rePfoud_KrFuvQ"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube">
+                <a href="https://www.youtube.com/channel/UCd2Ud_Cj4rePfoud_KrFuvQ" target="_blank"
+                    rel="noopener noreferrer" aria-label="YouTube">
                     <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    <span>YouTube</span>
                 </a>
 
-                <a href="https://discord.com/invite/uFSJMmXqBK"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a href="https://discord.com/invite/uFSJMmXqBK" target="_blank" rel="noopener noreferrer"
                     aria-label="Discord">
                     <i class="fa-brands fa-discord" aria-hidden="true"></i>
+                    <span>Discord</span>
                 </a>
 
-                <a href="https://t.me/caffeinegame"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Telegram">
+                <a href="https://t.me/caffeinegame" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                     <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+                    <span>Telegram</span>
                 </a>
 
-                <a href="https://www.twitch.tv/caffeine_game"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <a href="https://www.twitch.tv/caffeine_game" target="_blank" rel="noopener noreferrer"
                     aria-label="Twitch">
                     <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+                    <span>Twitch</span>
                 </a>
 
             </nav>
@@ -121,6 +151,53 @@
         <p>&copy; 2026 Caffeine. All rights reserved. // v0.0.2</p>
     </footer>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            /*
+                Coffee character blink animation
+            */
+            const character = document.getElementById("coffee-character");
+
+            if (character) {
+                // Preload blink images to prevent first blink delay
+                const blinkImages = [
+                    "/images/logo-half.png",
+                    "/images/logo-closed.png",
+                    "/images/logo.png"
+                ];
+
+                blinkImages.forEach(src => {
+                    const img = new Image();
+                    img.src = src;
+                });
+
+                function blink() {
+                    character.src = "/images/logo-half.png";
+                    setTimeout(() => {
+                        character.src = "/images/logo-closed.png";
+                    }, 100);
+                    setTimeout(() => {
+                        character.src = "/images/logo-half.png";
+                    }, 220);
+                    setTimeout(() => {
+                        character.src = "/images/logo.png";
+                    }, 350);
+                }
+
+                function scheduleBlink() {
+                    const nextBlink = 3000 + Math.random() * 3000;
+                    setTimeout(() => {
+                        blink();
+                        scheduleBlink();
+                    }, nextBlink);
+                }
+                scheduleBlink();
+            }
+        });
+    </script>
+
 </body>
+
 
 </html>
